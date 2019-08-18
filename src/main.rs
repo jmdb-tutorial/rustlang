@@ -1,7 +1,11 @@
+use log::{info};
+use simple_logger;
+
 fn main() {
     say_hello("foo");
 }
 
 fn say_hello(name: &str) {
-    println!("Hello, {name}!", name = name);
+    simple_logger::init().unwrap();
+    info!("Hello, {name}!", name = name);
 }
